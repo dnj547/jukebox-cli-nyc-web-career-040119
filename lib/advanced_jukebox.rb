@@ -42,7 +42,7 @@ def play(my_songs)
   user_input = gets.chomp
   my_songs.each do |song, path|
     if song == user_input
-      puts "Playing #{user_input}"
+      open my_songs[song]
     else
       puts "Invalid input, please try again"
     end
