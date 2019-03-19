@@ -24,6 +24,9 @@ end
 def list(my_songs)
   #this method is different! Collect the keys of the my_songs hash and
   #list the songs by name
+  songs.each_with_index do |song, i|
+    puts "#{i+1}. #{song}"
+  end
 end
 
 
@@ -50,10 +53,10 @@ def run(my_songs)
     input = gets.chomp
     case input
     when "list"
-      list(songs)
+      list(my_songs)
     when "play"
-      list(songs)
-      play(songs)
+      list(my_songs)
+      play(my_songs)
     when "help"
       help
     when "exit"
