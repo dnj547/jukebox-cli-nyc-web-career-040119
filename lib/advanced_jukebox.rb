@@ -40,12 +40,10 @@ def play(my_songs)
   #get the file path of the song by looking it up in the my_songs hash
   puts "Please enter a song name:"
   user_input = gets.chomp
-  my_songs.each do |song, path|
-    if song == user_input
-      open my_songs[song]
-    else
-      puts "Invalid input, please try again"
-    end
+  if my_songs.keys.include?(user_input)
+    open my_songs[user_input]
+  else
+    puts "Invalid input, please try again"
   end
 end
 
